@@ -1,0 +1,93 @@
+# ── OS junk ────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Python / build artifacts ───────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+*.egg
+MANIFEST
+
+# ── Virtual environments ──────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.conda/
+.python-version
+
+# ── Test / tooling caches ─────────────────────────────────────────────
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.pytype/
+.pyre/
+.ruff_cache/
+.cache/
+__pypackages__/
+
+# ── Django-specific ───────────────────────────────────────────────────
+# Logs & artifacts
+*.log
+# SQLite (dev)
+db.sqlite3
+db.sqlite3-journal
+
+# Collected static files (STATIC_ROOT). Adjust to your project if different.
+staticfiles/
+static_root/
+
+# User uploads (MEDIA_ROOT) — usually not tracked in git
+media/
+
+# Local-only settings & secrets
+local_settings.py
+.env
+.env.*
+*.env
+*.local
+*.secret
+secrets.*
+.envrc
+
+# Translations (compiled)
+*.mo
+# (Keep .po files; ignore .mo if you compile them)
+
+# Celery / process PIDs
+celerybeat-schedule
+celerybeat.pid
+gunicorn.pid
+
+# ── Editors / IDEs ────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.iml
+
+# ── Docs ──────────────────────────────────────────────────────────────
+docs/_build/
+
+# ── Frontend (if you keep JS/CSS tooling in the same repo) ────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnp/
+.pnp.js
