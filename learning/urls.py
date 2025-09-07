@@ -15,8 +15,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from demo.views import myFn, learnDjango
+from django.http import JsonResponse
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path("", include("demo.urls"))
+
+
 ]
+
+
+# This handles not found routes | DEBUG = False ALLOWED_HOSTS=["*"] | Otherwise will not work
+def route_not_found(request, exception=None):
+    return JsonResponse({"message": "This route doesn't exist"}, status=404)
+
+
+handler404 = route_not_found
