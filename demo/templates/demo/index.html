@@ -8,10 +8,17 @@
   </head>
   <body>
     <h1>
-      Hello this is {{course_name|default:"No course name provided"}} templating
+      Hello {{name}} this is {{course_name|default:"No course name provided"}}
+      templating
     </h1>
     <p>{{description|upper|truncatewords:2}}</p>
     <h2>{{current_time|date:"D d M Y"}}</h2>
     <h2>{{current_time|time}}</h2>
+
+    {% if status %}
+    <h3>Active</h3>
+    {% else %}
+    <h3>Inactive</h3>
+    {% endif %}
   </body>
 </html>

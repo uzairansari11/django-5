@@ -10,5 +10,5 @@ def myFn(request):
 
 def learnDjango(request, **kwargs):
     d = datetime.now()
-    values = {"course_name": "Django 5.1","description":"Hey this is django templating engine default one used by django",'current_time':d}
+    values = {"course_name": "Django 5.1","description":"Hey this is django templating engine default one used by django",'current_time':d,"status":False,"name":"Harshil","message":"dsds"}
     return render(request, 'demo/index.html', context=values)
