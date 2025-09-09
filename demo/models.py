@@ -67,24 +67,24 @@ class Author (models.Model):
     return self.name
 
 
-class Category (models.Model):
-  title=models.CharField(max_length=120,unique=True)
+# class Category (models.Model):
+#   title=models.CharField(max_length=120,unique=True)
 
-  def __str__(self):
-    return self.title
+#   def __str__(self):
+#     return self.title
   
-class Book(models.Model):
-  title = models.CharField(max_length=120)
-  price=models.DecimalField(max_digits=9,decimal_places=2,default=0)
-  author=models.ForeignKey(Author,on_delete=models.CASCADE,related_name="books")
-  categories  = models.ManyToManyField(Category, related_name="books", blank=True)
-  publish=models.DateField(null=True,blank=True)
-  stock= models.PositiveIntegerField(default=0)
-  sold= models.PositiveIntegerField(default=0)
+# class Book(models.Model):
+#   title = models.CharField(max_length=120)
+#   price=models.DecimalField(max_digits=9,decimal_places=2,default=0)
+#   author=models.ForeignKey(Author,on_delete=models.CASCADE,related_name="books")
+#   categories  = models.ManyToManyField(Category, related_name="books", blank=True)
+#   publish=models.DateField(null=True,blank=True)
+#   stock= models.PositiveIntegerField(default=0)
+#   sold= models.PositiveIntegerField(default=0)
 
-  class Meta:
-        constraints = [
-            models.CheckConstraint(check=models.Q(stock__gte=0), name="stock_non_negative"),
-        ]
+#   class Meta:
+#         constraints = [
+#             models.CheckConstraint(check=models.Q(stock__gte=0), name="stock_non_negative"),
+#         ]
   
 
